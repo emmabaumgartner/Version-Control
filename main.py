@@ -25,9 +25,13 @@ def encode_password(password):
             password_encoded.append(str(int(digit) + 3))
     return ''.join(password_encoded)
 
-def decode_password(password):
-    # take away 3 digits from the password?
-    pass
+# Dalila Portal
+def decode_password(password): # take away 3 digits from the password?
+    decoded_password = ""
+    for i in password:
+        decode_value = (int(i) - 3) % 10 # Loops it back when the number goes to negative
+        decoded_password += str(decode_value )
+    return decoded_password
 
 while True:
     # Press the green button in the gutter to run the script.
